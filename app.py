@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request, make_response
-from flask_sqlalchemy import SQLAlchemy
+from models import db, User
 import uuid
 from werkzeug.security import generate_password_hash, check_password_hash
 import jwt
@@ -12,18 +12,11 @@ app.config['SECRET_KEY'] = 'mysecret'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-db = SQLAlchemy(app)
+db.init_app(app)
 
 
 
-class User(db.Model):
-    __tablename__ = "users"
-    id = db.Column(db.Integer, primary_key=True)
-    public_id = db.Column(db.String(128), unique=True)
-    name = db.Column(db.String(128))
-    email = db.Column(db.String(128))
-    password = db.Column(db.String(128))
-    admin = db.Column(db.Boolean)
+
 
 # db.create_all()
 
@@ -111,7 +104,11 @@ def get_one_user(current_user, public_id):
     return jsonify({'user': user_data})
 
 @app.route('/user/<public_id>', methods=['PUT'])
-def promote_user(public_id):
+@token_required
+def promote_user(current_user, public_id):
+
+    if not current_user.admin:
+        return jsonify({'message': 'Cannot perform that function!'})
 
     user = User.query.filter_by(public_id = public_id).first()
 
@@ -124,7 +121,11 @@ def promote_user(public_id):
     return jsonify({'message': 'The user has been promoted!'})
 
 @app.route('/user/<public_id>', methods=['DELETE'])
-def delete_user(public_id):
+@token_required
+def delete_user(current_user, public_id):
+
+    if not current_user.admin:
+        return jsonify({'message': 'Cannot perform that function!'})
 
     user = User.query.filter_by(public_id = public_id).first()
 
