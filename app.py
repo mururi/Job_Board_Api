@@ -42,6 +42,10 @@ def token_required(f):
 
     return decorated
 
+@app.route('/', methods=['GET'])
+def home_test():
+    return jsonify({'message': 'Working home route'}), 200
+
 
 @app.route('/user', methods=['POST'])
 def create_user():
