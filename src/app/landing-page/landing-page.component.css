@@ -1,0 +1,143 @@
+/* #hero {
+    background-image: url('');
+    height: 100vh;
+    display: flex;
+  }
+  
+  section {
+    position: relative;
+  }
+  
+  nav{
+      position: absolute !important;
+  }
+  
+  .navbar-light .navbar-brand {
+    color: #fff;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  
+  .navbar-light .navbar-nav .active > .nav-link,
+  .navbar-light .navbar-nav .nav-link.active,
+  .navbar-light .navbar-nav .nav-link.show,
+  .navbar-light .navbar-nav .show > .nav-link {
+    color: #fff;
+  }
+  
+  .navbar-light .navbar-nav .nav-link {
+    color: #fff;
+  }
+  
+  .navbar-toggler {
+    background: #fff;
+  }
+  
+  .navbar-nav {
+    text-align: center;
+  }
+   */
+  .nav-link {
+    padding: 0.2rem 1rem;
+  }
+  
+  .nav-link.active,
+  .nav-link:focus {
+    color: #fff;
+  }
+  
+  .navbar-toggler {
+    padding: 1px 5px;
+    font-size: 18px;
+    line-height: 0.3;
+  }
+  
+  .navbar-light .navbar-nav .nav-link:focus,
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: #fff;
+  }
+  
+  .nvv {
+    justify-content: space-evenly;
+  }
+  
+  .box {
+    padding: 60px 0px;
+    margin-top: -17rem;
+  }
+  
+  .box-part {
+    background-color: #f8f9fa;
+    border-radius: 0;
+    padding: 60px 10px;
+    margin: 30px 0px;
+  }
+  .text {
+    margin: 20px 0px;
+  }
+  
+  .fa {
+    color: #f8f9fa;
+  }
+  
+  
+  #post {
+    display: flex;
+    flex-direction: row;
+    margin-top: 3rem;
+  }
+  
+  .abt-desc {
+    display: block;
+    margin-top: auto !important;
+  }
+  
+  .abt-img {
+    width: 100%;
+  }
+  
+  .abt-desc h2 {
+    font-size: 46px;
+    margin-bottom: 2rem;
+  }
+  
+  .abt-desc h6 {
+    font-size: 26px;
+    margin-bottom: 2rem;
+  }
+  
+  #feat {
+    display: block;
+    margin: auto !important;
+    background-color: rgba(33, 33, 33, 1);
+    color: #fff !important;
+    margin-top: 3rem !important;
+  }
+  
+  .job-box {
+    padding: 60px 0px;
+  }
+  
+  .feat-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 3%;
+  }
+  
+  #footer {
+    background-color: rgba(33, 33, 33, 1);
+    color: #fff !important;
+    margin-top: 3rem !important;
+  }
+  
+  .footer-1 {
+    display: block;
+  }
+  
+  button {
+      color: #fff !important;
+      background-color: red !important;
+  }
+  
